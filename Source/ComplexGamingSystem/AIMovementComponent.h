@@ -31,7 +31,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void Wander(AActor* owner, FVector NewLocation, FVector NewVelocity, float NewSpeed, float DeltaTime);
+	//Calculte new direction
+	FVector CalculateRandomVector(float z);
+
+	FVector Wander(FVector NewLocation, FVector NewVelocity, FVector NewSpeed, float DeltaTime);
 	void LookForNeededRescource(AActor* owner);
 	void Pathfind(AActor* owner, AActor* target);
 };

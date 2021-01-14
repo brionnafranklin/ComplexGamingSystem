@@ -47,7 +47,7 @@ void UHungerComponent::CheckIfHungry()
 
 void UHungerComponent::CheckIfEaten()
 {
-	if (eaten = true)
+	if (eaten == true)
 	{
 		currentHunger = maxHunger;
 	}
