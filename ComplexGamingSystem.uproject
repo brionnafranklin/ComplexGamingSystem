@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{6DFD2530-4ACD-4BB5-20AE-8FBC5989ED06}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "ComplexGamingSystem",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
