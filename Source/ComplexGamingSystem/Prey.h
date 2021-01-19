@@ -2,27 +2,20 @@
 
 #pragma once
 
+#include "GameFramework/Character.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "AIMovementComponent.h"
+#include "AIMovementController.h"
 #include "Prey.generated.h"
 
 UCLASS()
-class COMPLEXGAMINGSYSTEM_API APrey : public APawn
+class COMPLEXGAMINGSYSTEM_API APrey : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
 	APrey();
-
-	// Add Mesh
-	UPROPERTY(VisibleAnywhere)
-	USkeletalMeshComponent* Mesh;
-
-	// Add AI Movement
-	UPROPERTY(VisibleAnywhere)
-	UAIMovementComponent* AIMovement;
 
 protected:
 	// Called when the game starts or when spawned
