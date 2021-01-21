@@ -9,6 +9,9 @@
 /**
  * 
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FReachedDesination);
+
 UCLASS()
 class COMPLEXGAMINGSYSTEM_API AAIMovementController : public AAIController
 {
@@ -17,18 +20,31 @@ class COMPLEXGAMINGSYSTEM_API AAIMovementController : public AAIController
 public:
 
 	//set radius, offset, and jitter
-	float m_radius = 500.0f;
-	float m_offset = 0.0f;
-	float m_jitter = 100.0f;
+	float m_radius = 600.0f;
+	float m_offset = 1.0f;
+	float m_jitter = 1.0f;
 	//set previous target to be 0
 	FVector m_prevTarget = { 0.0f, 0.0f, 0.0f };
+	AActor* Owner;
+
+	FVector targetPos = { 0.0f, 0.0f, 0.0f };
 
 	UFUNCTION(BlueprintCallable)
 		void TestFunction();
 
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 	//Calculte new direction
-	FVector CalculateRandomVector(float z);
-	FVector Wander(FVector CurrentLocation);
+	FVector CalculateRandomVector();
+
+	UFUNCTION(BlueprintCallable)
+		void Wander();
+
 	void LookForNeededRescource(AActor* owner);
-	void Pathfind(AActor* owner, AActor* target);
+
+	bool CheckTargetInRange(float range);
+
+	UPROPERTY(BlueprintAssignable, Category = "AIMovement")
+		FReachedDesination OnReachedDesination;
 };

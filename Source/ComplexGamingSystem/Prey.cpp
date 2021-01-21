@@ -43,7 +43,7 @@ void APrey::Tick(float DeltaTime)
 	//ConsumeMovementInputVector();
 	//SetActorLocation(ChangedLocation);
 	//AddForce(TestForce);
-	SetActorLocation(Controller->Wander(CurrentLocation));
+	//SetActorLocation(Controller->Wander(CurrentLocation));
 }
 
 // Called to bind functionality to input
