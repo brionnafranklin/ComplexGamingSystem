@@ -36,7 +36,7 @@ public:
 	virtual void BeginPlay() override;
 
 	//Calculte new direction
-	FVector CalculateRandomVector();
+	FVector CalculateRandomVector( float z );
 
 	UFUNCTION(BlueprintCallable)
 		void Wander();

@@ -21,20 +21,17 @@ void AAIMovementController::BeginPlay()
 	targetPos = Owner->GetActorLocation();
 }
 
-FVector AAIMovementController::CalculateRandomVector()
+FVector AAIMovementController::CalculateRandomVector( float z )
 {
-	/*float randX = (float)rand() - ((float)RAND_MAX) / 2;
+	float randX = (float)rand() - ((float)RAND_MAX) / 2;
 	float randY = (float)rand() - ((float)RAND_MAX) / 2;
-	return FVector{ randX, randY, z };*/
-	FVector RandomLocation = FVector();
-	UNavigationSystem::K2_GetRandomReachablePointInRadius(Owner, Owner->GetActorLocation(), RandomLocation, m_radius);
-	return RandomLocation;
+	return FVector{ randX, randY, z };
 }
 
 void AAIMovementController::Wander()
 {
 	//Start with a random target on the edge of a circle with a set radius around the agent
-	targetPos = CalculateRandomVector().GetSafeNormal() * m_radius;
+	targetPos = CalculateRandomVector(Owner->GetActorLocation().Z).GetSafeNormal() * m_radius;
 	//Add a randomized vector to the target, with a magnitude specified by a jitter amount
 	targetPos *= m_jitter;
 	//Bring the target back to the radius of the sphere by normalizing it and scaling by the radius

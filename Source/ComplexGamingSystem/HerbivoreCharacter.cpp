@@ -15,7 +15,6 @@ AHerbivoreCharacter::AHerbivoreCharacter()
 void AHerbivoreCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -31,7 +30,7 @@ void AHerbivoreCharacter::Tick(float DeltaTime)
 	}
 
 	//Controller->Wander();
-	if (Controller->CheckTargetInRange(600))
+	if (Controller->CheckTargetInRange(300))
 	{
 		Controller->OnReachedDesination.Broadcast();
 	}
