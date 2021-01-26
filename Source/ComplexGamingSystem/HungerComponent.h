@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "HerbivoreCharacter.h"
 #include "HungerComponent.generated.h"
 
 
@@ -25,7 +26,11 @@ public:
 	// wether or not this actor can eat
 	bool isHungry = false;
 	// wether or not this actor has consumed food
-	bool eaten = false;
+	bool hasEaten = false;
+	// The type of actor that is going to be eaten
+	AActor* Food;
+	// The owner of this component
+	AActor* Owner;
 
 protected:
 	// Called when the game starts
@@ -35,6 +40,10 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	// Sets Food to type dependng on the owner's type
+	void SetFoodType();
+	// Checks to t see if current hunger is belong the the threshold of hungry
 	void CheckIfHungry();
+	// Sets hunger back to max if eaten is true
 	void CheckIfEaten();
 };

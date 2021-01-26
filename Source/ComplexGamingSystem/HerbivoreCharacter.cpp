@@ -29,11 +29,17 @@ void AHerbivoreCharacter::Tick(float DeltaTime)
 		return;
 	}
 
-	//Controller->Wander();
 	if (Controller->CheckTargetInRange(300))
 	{
 		Controller->OnReachedDesination.Broadcast();
 	}
+
+	if (CheckIfHungry())
+	{
+
+	}
+	// Slowly decrease current hunger
+	currentHunger--;
 }
 
 // Called to bind functionality to input
@@ -41,5 +47,10 @@ void AHerbivoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+bool AHerbivoreCharacter::CheckIfHungry()
+{
+	return currentHunger <= hungry;
 }
 

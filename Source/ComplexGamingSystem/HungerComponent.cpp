@@ -37,6 +37,16 @@ void UHungerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	// ...
 }
 
+void UHungerComponent::SetFoodType()
+{
+	Owner = CastChecked<AHerbivoreCharacter>(GetOwner());
+	if (!Owner)
+	{
+		return;
+	}
+	
+}
+
 void UHungerComponent::CheckIfHungry()
 {
 	if (currentHunger <= hungry)
@@ -47,7 +57,7 @@ void UHungerComponent::CheckIfHungry()
 
 void UHungerComponent::CheckIfEaten()
 {
-	if (eaten == true)
+	if (hasEaten == true)
 	{
 		currentHunger = maxHunger;
 	}
