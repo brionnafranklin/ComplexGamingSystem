@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/CapsuleComponent.h"
 #include "Plant.generated.h"
 
 UCLASS()
@@ -11,6 +12,10 @@ class COMPLEXGAMINGSYSTEM_API APlant : public AActor
 {
 	GENERATED_BODY()
 	
+	// create trigger capsule
+	UPROPERTY(VisibleAnywhere, Category = "Trigger Capsule")
+	class UCapsuleComponent* TriggerCapsule;
+
 public:	
 	// Sets default values for this actor's properties
 	APlant();

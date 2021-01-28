@@ -1,28 +1,55 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "Engine.h"
 #include "HerbivoreCharacter.h"
 
-// Sets default values
+void AHerbivoreCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Overlap Begin"));
+		Controller->MoveToLocation(OtherActor->GetActorLocation);
+	}
+}
+
+void AHerbivoreCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Overlap End"));
+	}
+}
+
+/// Sets default values
 AHerbivoreCharacter::AHerbivoreCharacter()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	/// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	/// declare trigger capsule
+	TriggerCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Trigger Capsule"));
+	TriggerCapsule->InitCapsuleSize(300.0f, 100.0f);;
+	TriggerCapsule->SetCollisionProfileName(TEXT("Trigger"));
+	TriggerCapsule->SetupAttachment(RootComponent);
+
+	/// declare overlap events
+	TriggerCapsule->OnComponentBeginOverlap.AddDynamic(this, &AHerbivoreCharacter::OnOverlapBegin);
+	TriggerCapsule->OnComponentEndOverlap.AddDynamic(this, &AHerbivoreCharacter::OnOverlapEnd);
 
 }
 
-// Called when the game starts or when spawned
+/// Called when the game starts or when spawned
 void AHerbivoreCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
+/// Called every frame
 void AHerbivoreCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	AAIMovementController* Controller = CastChecked<AAIMovementController>(GetController());
+	Controller = CastChecked<AAIMovementController>(GetController());
 
 	if (!Controller)
 	{
@@ -38,11 +65,11 @@ void AHerbivoreCharacter::Tick(float DeltaTime)
 	{
 
 	}
-	// Slowly decrease current hunger
+	/// Slowly decrease current hunger
 	currentHunger--;
 }
 
-// Called to bind functionality to input
+/// Called to bind functionality to input
 void AHerbivoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -52,5 +79,10 @@ void AHerbivoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 bool AHerbivoreCharacter::CheckIfHungry()
 {
 	return currentHunger <= hungry;
+}
+
+bool AHerbivoreCharacter::CheckIfObjectfIsInRange(float range, FVector foodPos)
+{
+	return (FVector::Distance(GetActorLocation(), foodPos) <= range);
 }
 

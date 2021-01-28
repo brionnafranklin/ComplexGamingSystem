@@ -19,12 +19,15 @@ class COMPLEXGAMINGSYSTEM_API AAIMovementController : public AAIController
 
 public:
 
-	//set radius, offset, and jitter
+	/// set radius  
 	float m_radius = 600.0f;
+	/// set offset
 	float m_offset = 1.0f;
+	/// set jitter
 	float m_jitter = 1.0f;
-	//set previous target to be 0
+	/// set previous target to be 0
 	FVector m_prevTarget = { 0.0f, 0.0f, 0.0f };
+	/// The owner of this controller
 	AActor* Owner;
 
 	FVector targetPos = { 0.0f, 0.0f, 0.0f };
