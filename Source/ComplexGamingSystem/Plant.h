@@ -16,6 +16,10 @@ class COMPLEXGAMINGSYSTEM_API APlant : public AActor
 	UPROPERTY(VisibleAnywhere, Category = "Trigger Capsule")
 	class UCapsuleComponent* TriggerCapsule;
 
+	/// create mesh
+	UPROPERTY(VisibleAnywhere, Category = "Mesh")
+		class UStaticMesh* Mesh;
+
 public:	
 	/// Sets default values for this actor's properties
 	APlant();
