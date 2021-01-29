@@ -15,10 +15,10 @@ void ACarnivoreCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AA
 	}
 	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(ACarnivoreCharacter::StaticClass()))
 	{
-		FVector SpawnLocation = (GetActorLocation() + OtherActor->GetActorLocation()) / 2;
+		/*FVector SpawnLocation = (GetActorLocation() + OtherActor->GetActorLocation()) / 2;
 		FRotator SpawnRotation = (GetActorRotation());
 		FActorSpawnParameters SpawnParams;
-		GetWorld()->SpawnActor<ACarnivoreCharacter>(SpawnLocation, SpawnRotation, SpawnParams);
+		GetWorld()->SpawnActor<ACarnivoreCharacter>(SpawnLocation, SpawnRotation, SpawnParams);*/
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, TEXT("Overlap Begin"));
 	}
 }
