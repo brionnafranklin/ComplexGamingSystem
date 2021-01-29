@@ -37,9 +37,7 @@ public:
 	float maxHunger = 100.0f;
 	/// How low the hunger must be until food can be consumed
 	float hungry = 75.0f;
-	/// The type of actor that is going to be eaten
-	APlant* Food;
-
+	/// The AI Controller using this
 	AAIMovementController* Controller;
 
 protected:
@@ -53,7 +51,7 @@ public:
 	/// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	/// Checks to t see if current hunger is belong the the threshold of hungry
+	/// Checks to see if current hunger is below the the threshold of hungry
 	bool CheckIfHungry();
 
 	/// returns true if food is in range

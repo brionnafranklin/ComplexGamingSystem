@@ -5,11 +5,7 @@
 #include "NavigationSystem.h"
 #include "Engine.h"
 
-void AAIMovementController::TestFunction()
-{
-	MoveToLocation(FVector(0,0,0));
-}
-
+/// Called when the game starts or when spawned
 void AAIMovementController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -21,6 +17,7 @@ void AAIMovementController::BeginPlay()
 	targetPos = Owner->GetActorLocation();
 }
 
+/// Calculte new random location
 FVector AAIMovementController::CalculateRandomVector( float z )
 {
 	float randX = (float)rand() - ((float)RAND_MAX) / 2;
@@ -28,16 +25,17 @@ FVector AAIMovementController::CalculateRandomVector( float z )
 	return FVector{ randX, randY, z };
 }
 
+/// Moves to a random location
 void AAIMovementController::Wander()
 {
-	//Start with a random target on the edge of a circle with a set radius around the agent
+	/// Start with a random target on the edge of a circle with a set radius around the agent
 	targetPos = CalculateRandomVector(Owner->GetActorLocation().Z).GetSafeNormal() * m_radius;
-	//Add a randomized vector to the target, with a magnitude specified by a jitter amount
+	/// Add a randomized vector to the target, with a magnitude specified by a jitter amount
 	targetPos *= m_jitter;
-	//Bring the target back to the radius of the sphere by normalizing it and scaling by the radius
+	/// Bring the target back to the radius of the sphere by normalizing it and scaling by the radius
 	targetPos = targetPos.GetSafeNormal() * m_radius;
 	targetPos *= m_offset;
-	//Add the previous target
+	/// Add the previous target
 	targetPos += m_prevTarget;
 
 	GEngine->AddOnScreenDebugMessage(-1, 500.0f, FColor::Blue, targetPos.ToString());
@@ -46,10 +44,7 @@ void AAIMovementController::Wander()
 	return;
 }
 
-void AAIMovementController::LookForNeededRescource(AActor* owner)
-{
-}
-
+/// Checks to see if target position in within a given range
 bool AAIMovementController::CheckTargetInRange(float range)
 {
 	return (FVector::Distance(Owner->GetActorLocation(), targetPos) <= range);

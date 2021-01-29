@@ -6,10 +6,10 @@
 /// Sets default values
 APlant::APlant()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	/// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	// declare trigger capsule
+	/// declare trigger capsule
 	TriggerCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Trigger Capsule"));
 	TriggerCapsule->InitCapsuleSize(100.0f, 100.0f);;
 	TriggerCapsule->SetCollisionProfileName(TEXT("Trigger"));

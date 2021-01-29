@@ -1,20 +1,22 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Engine.h"
 #include "HerbivoreCharacter.h"
+#include "Engine.h"
 
 void AHerbivoreCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()))
+	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()) && CheckIfHungry())
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Overlap Begin"));
-		Controller->MoveToLocation(OtherActor->GetActorLocation);
+		Controller->MoveToLocation(OtherActor->GetActorLocation());
+		GetWorld()->DestroyActor(OtherActor);
+		Controller->Wander();
 	}
 }
 
 void AHerbivoreCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()))
+	if (OtherActor && (OtherActor != this) && OtherComp && OtherActor->IsA(APlant::StaticClass()) && CheckIfHungry())
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Overlap End"));
 	}
@@ -36,6 +38,7 @@ AHerbivoreCharacter::AHerbivoreCharacter()
 	TriggerCapsule->OnComponentBeginOverlap.AddDynamic(this, &AHerbivoreCharacter::OnOverlapBegin);
 	TriggerCapsule->OnComponentEndOverlap.AddDynamic(this, &AHerbivoreCharacter::OnOverlapEnd);
 
+	AIControllerClass = AAIMovementController::StaticClass();
 }
 
 /// Called when the game starts or when spawned
@@ -60,11 +63,6 @@ void AHerbivoreCharacter::Tick(float DeltaTime)
 	{
 		Controller->OnReachedDesination.Broadcast();
 	}
-
-	if (CheckIfHungry())
-	{
-
-	}
 	/// Slowly decrease current hunger
 	currentHunger--;
 }
@@ -76,11 +74,13 @@ void AHerbivoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 
 }
 
+/// Checks to see if current hunger is below the the threshold of hungry
 bool AHerbivoreCharacter::CheckIfHungry()
 {
 	return currentHunger <= hungry;
 }
 
+/// returns true if food is in range
 bool AHerbivoreCharacter::CheckIfObjectfIsInRange(float range, FVector foodPos)
 {
 	return (FVector::Distance(GetActorLocation(), foodPos) <= range);

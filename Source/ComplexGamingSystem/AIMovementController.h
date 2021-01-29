@@ -29,25 +29,22 @@ public:
 	FVector m_prevTarget = { 0.0f, 0.0f, 0.0f };
 	/// The owner of this controller
 	AActor* Owner;
-
+	/// The random posistion generated
 	FVector targetPos = { 0.0f, 0.0f, 0.0f };
 
-	UFUNCTION(BlueprintCallable)
-		void TestFunction();
-
-	// Called when the game starts or when spawned
+	/// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	//Calculte new direction
+	/// Calculte new random location
 	FVector CalculateRandomVector( float z );
 
+	/// Moves to a random location
 	UFUNCTION(BlueprintCallable)
 		void Wander();
 
-	void LookForNeededRescource(AActor* owner);
-
+	/// Checks to see if target position in within a given range
 	bool CheckTargetInRange(float range);
 
+	/// An event that is broadcast when Character has reached the targetPos. On this event Wander is called
 	UPROPERTY(BlueprintAssignable, Category = "AIMovement")
 		FReachedDesination OnReachedDesination;
 };
