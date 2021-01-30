@@ -1,4 +1,5 @@
 ComplexGamingSystem
+-Documentation ~https://brionnafranklin.github.io/ComplexGamingSystem/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 How to Add to a Project
 - Step one ~ Download the contents of the Scource folder https://github.com/brionnafranklin/ComplexGamingSystem/tree/master/Source
