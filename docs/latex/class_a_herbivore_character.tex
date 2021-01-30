@@ -1,0 +1,184 @@
+\hypertarget{class_a_herbivore_character}{}\doxysection{A\+Herbivore\+Character Class Reference}
+\label{class_a_herbivore_character}\index{AHerbivoreCharacter@{AHerbivoreCharacter}}
+
+
+{\ttfamily \#include $<$Herbivore\+Character.\+h$>$}
+
+Inheritance diagram for A\+Herbivore\+Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_herbivore_character}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_herbivore_character_a6ba791299b14d1f5027fc541db105305}{On\+Overlap\+Begin}} (class U\+Primitive\+Component $\ast$Overlapped\+Comp, class A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index, bool b\+From\+Sweep, const F\+Hit\+Result \&Sweep\+Result)
+\begin{DoxyCompactList}\small\item\em declare overlap begin function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_herbivore_character_a8b3337d0cb3a559103eb375a6566b02a}{On\+Overlap\+End}} (class U\+Primitive\+Component $\ast$Overlapped\+Comp, class A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index)
+\begin{DoxyCompactList}\small\item\em declare overlap end function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_herbivore_character_a727ba610267df04b139a25a4229ab4e8}{A\+Herbivore\+Character}} ()
+\begin{DoxyCompactList}\small\item\em Sets default values for this character\textquotesingle{}s properties. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_herbivore_character_aa9d68e8a938603fff466fc9787558adc}{Tick}} (float Delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Called every frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_herbivore_character_a1994f7b76a07c7d73349ceab4e54278d}{Setup\+Player\+Input\+Component}} (class U\+Input\+Component $\ast$Player\+Input\+Component) override
+\begin{DoxyCompactList}\small\item\em Called to bind functionality to input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_herbivore_character_a41fd49ed68f88506f2358f27f39b077d}{Check\+If\+Hungry}} ()
+\begin{DoxyCompactList}\small\item\em Checks to see if current hunger is below the the threshold of hungry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_herbivore_character_ae37803e2f92df5d492e08a215c9e89c8}{Check\+If\+Objectf\+Is\+In\+Range}} (float range, F\+Vector food\+Pos)
+\begin{DoxyCompactList}\small\item\em returns true if food is in range \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_a_herbivore_character_a733c19214e952dd33697ed15a59267a6}{current\+Hunger}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em Decreases over time and refils after eating. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_herbivore_character_ae528efa0b3bbce3d24c18abea10e04a3}{max\+Hunger}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em The max hunger can be at any given time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_herbivore_character_a9c52510b3569c2dffa937bef4bde9b72}{hungry}} = 75.\+0f
+\begin{DoxyCompactList}\small\item\em How low the hunger must be until food can be consumed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_a_i_movement_controller}{A\+A\+I\+Movement\+Controller}} $\ast$ \mbox{\hyperlink{class_a_herbivore_character_a13aa2445d5aff18dadc74c6f794ffa01}{Controller}}
+\begin{DoxyCompactList}\small\item\em The AI Controller using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_herbivore_character_a8444addda6e00fea2b0da810f9d9c136}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Called when the game starts or when spawned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_herbivore_character_a727ba610267df04b139a25a4229ab4e8}\label{class_a_herbivore_character_a727ba610267df04b139a25a4229ab4e8}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{AHerbivoreCharacter()}{AHerbivoreCharacter()}}
+{\footnotesize\ttfamily A\+Herbivore\+Character\+::\+A\+Herbivore\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets default values for this character\textquotesingle{}s properties. 
+
+Sets default values. Set this character to call \mbox{\hyperlink{class_a_herbivore_character_aa9d68e8a938603fff466fc9787558adc}{Tick()}} every frame. You can turn this off to improve performance if you don\textquotesingle{}t need it.
+
+declare trigger capsule
+
+declare overlap events
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_herbivore_character_a8444addda6e00fea2b0da810f9d9c136}\label{class_a_herbivore_character_a8444addda6e00fea2b0da810f9d9c136}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily void A\+Herbivore\+Character\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when the game starts or when spawned. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a41fd49ed68f88506f2358f27f39b077d}\label{class_a_herbivore_character_a41fd49ed68f88506f2358f27f39b077d}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!CheckIfHungry@{CheckIfHungry}}
+\index{CheckIfHungry@{CheckIfHungry}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{CheckIfHungry()}{CheckIfHungry()}}
+{\footnotesize\ttfamily bool A\+Herbivore\+Character\+::\+Check\+If\+Hungry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks to see if current hunger is below the the threshold of hungry. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_ae37803e2f92df5d492e08a215c9e89c8}\label{class_a_herbivore_character_ae37803e2f92df5d492e08a215c9e89c8}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!CheckIfObjectfIsInRange@{CheckIfObjectfIsInRange}}
+\index{CheckIfObjectfIsInRange@{CheckIfObjectfIsInRange}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{CheckIfObjectfIsInRange()}{CheckIfObjectfIsInRange()}}
+{\footnotesize\ttfamily bool A\+Herbivore\+Character\+::\+Check\+If\+Objectf\+Is\+In\+Range (\begin{DoxyParamCaption}\item[{float}]{range,  }\item[{F\+Vector}]{food\+Pos }\end{DoxyParamCaption})}
+
+
+
+returns true if food is in range 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a6ba791299b14d1f5027fc541db105305}\label{class_a_herbivore_character_a6ba791299b14d1f5027fc541db105305}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!OnOverlapBegin@{OnOverlapBegin}}
+\index{OnOverlapBegin@{OnOverlapBegin}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{OnOverlapBegin()}{OnOverlapBegin()}}
+{\footnotesize\ttfamily void A\+Herbivore\+Character\+::\+On\+Overlap\+Begin (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{Overlapped\+Comp,  }\item[{class A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index,  }\item[{bool}]{b\+From\+Sweep,  }\item[{const F\+Hit\+Result \&}]{Sweep\+Result }\end{DoxyParamCaption})}
+
+
+
+declare overlap begin function 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a8b3337d0cb3a559103eb375a6566b02a}\label{class_a_herbivore_character_a8b3337d0cb3a559103eb375a6566b02a}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!OnOverlapEnd@{OnOverlapEnd}}
+\index{OnOverlapEnd@{OnOverlapEnd}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{OnOverlapEnd()}{OnOverlapEnd()}}
+{\footnotesize\ttfamily void A\+Herbivore\+Character\+::\+On\+Overlap\+End (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{Overlapped\+Comp,  }\item[{class A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index }\end{DoxyParamCaption})}
+
+
+
+declare overlap end function 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a1994f7b76a07c7d73349ceab4e54278d}\label{class_a_herbivore_character_a1994f7b76a07c7d73349ceab4e54278d}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!SetupPlayerInputComponent@{SetupPlayerInputComponent}}
+\index{SetupPlayerInputComponent@{SetupPlayerInputComponent}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{SetupPlayerInputComponent()}{SetupPlayerInputComponent()}}
+{\footnotesize\ttfamily void A\+Herbivore\+Character\+::\+Setup\+Player\+Input\+Component (\begin{DoxyParamCaption}\item[{class U\+Input\+Component $\ast$}]{Player\+Input\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called to bind functionality to input. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_aa9d68e8a938603fff466fc9787558adc}\label{class_a_herbivore_character_aa9d68e8a938603fff466fc9787558adc}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!Tick@{Tick}}
+\index{Tick@{Tick}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void A\+Herbivore\+Character\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame. 
+
+Slowly decrease current hunger
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_herbivore_character_a13aa2445d5aff18dadc74c6f794ffa01}\label{class_a_herbivore_character_a13aa2445d5aff18dadc74c6f794ffa01}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!Controller@{Controller}}
+\index{Controller@{Controller}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{Controller}{Controller}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_a_i_movement_controller}{A\+A\+I\+Movement\+Controller}}$\ast$ A\+Herbivore\+Character\+::\+Controller}
+
+
+
+The AI Controller using this. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a733c19214e952dd33697ed15a59267a6}\label{class_a_herbivore_character_a733c19214e952dd33697ed15a59267a6}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!currentHunger@{currentHunger}}
+\index{currentHunger@{currentHunger}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{currentHunger}{currentHunger}}
+{\footnotesize\ttfamily float A\+Herbivore\+Character\+::current\+Hunger = 100.\+0f}
+
+
+
+Decreases over time and refils after eating. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_a9c52510b3569c2dffa937bef4bde9b72}\label{class_a_herbivore_character_a9c52510b3569c2dffa937bef4bde9b72}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!hungry@{hungry}}
+\index{hungry@{hungry}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{hungry}{hungry}}
+{\footnotesize\ttfamily float A\+Herbivore\+Character\+::hungry = 75.\+0f}
+
+
+
+How low the hunger must be until food can be consumed. 
+
+\mbox{\Hypertarget{class_a_herbivore_character_ae528efa0b3bbce3d24c18abea10e04a3}\label{class_a_herbivore_character_ae528efa0b3bbce3d24c18abea10e04a3}} 
+\index{AHerbivoreCharacter@{AHerbivoreCharacter}!maxHunger@{maxHunger}}
+\index{maxHunger@{maxHunger}!AHerbivoreCharacter@{AHerbivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{maxHunger}{maxHunger}}
+{\footnotesize\ttfamily float A\+Herbivore\+Character\+::max\+Hunger = 100.\+0f}
+
+
+
+The max hunger can be at any given time. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_herbivore_character_8h}{Herbivore\+Character.\+h}}\item 
+\mbox{\hyperlink{_herbivore_character_8cpp}{Herbivore\+Character.\+cpp}}\end{DoxyCompactItemize}

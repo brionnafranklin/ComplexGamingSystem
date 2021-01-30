@@ -1,0 +1,170 @@
+\hypertarget{class_a_a_i_movement_controller}{}\doxysection{A\+A\+I\+Movement\+Controller Class Reference}
+\label{class_a_a_i_movement_controller}\index{AAIMovementController@{AAIMovementController}}
+
+
+{\ttfamily \#include $<$A\+I\+Movement\+Controller.\+h$>$}
+
+Inheritance diagram for A\+A\+I\+Movement\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_a_i_movement_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_a_i_movement_controller_ad90518f56a504b1b99d79ad251b5e801}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Called when the game starts or when spawned. \end{DoxyCompactList}\item 
+F\+Vector \mbox{\hyperlink{class_a_a_i_movement_controller_af805e434d3f3176561935a9ffc0f9ce0}{Calculate\+Random\+Vector}} (float z)
+\begin{DoxyCompactList}\small\item\em Calculte new random location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_a_i_movement_controller_a2b6148d8d4d2ee4ff1067423586f12f1}{Wander}} ()
+\begin{DoxyCompactList}\small\item\em Moves to a random location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_a_i_movement_controller_aa588ed421afbbcd4fe6548a88ce65cff}{Check\+Target\+In\+Range}} (float range)
+\begin{DoxyCompactList}\small\item\em Checks to see if target position in within a given range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_a_a_i_movement_controller_a98c269b05cd8c525c28687f7c6434919}{m\+\_\+radius}} = 600.\+0f
+\begin{DoxyCompactList}\small\item\em set radius ~\newline
+ \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_a_i_movement_controller_a25a7e8f1b738c43ff80d588e2a31a292}{m\+\_\+offset}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em set offset \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_a_i_movement_controller_a10b9187a9ec6e53250c09ec6a3320d43}{m\+\_\+jitter}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em set jitter \end{DoxyCompactList}\item 
+F\+Vector \mbox{\hyperlink{class_a_a_i_movement_controller_a3f9844e64809f1ff023fc2cc987cc104}{m\+\_\+prev\+Target}} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em set previous target to be 0 \end{DoxyCompactList}\item 
+A\+Actor $\ast$ \mbox{\hyperlink{class_a_a_i_movement_controller_a5a72dc4114e71dc509b2e0b434f4bd54}{Owner}}
+\begin{DoxyCompactList}\small\item\em The owner of this controller. \end{DoxyCompactList}\item 
+F\+Vector \mbox{\hyperlink{class_a_a_i_movement_controller_aeddd9adae249a1ea5b6914ceb41fd8b4}{target\+Pos}} = \{ 0.\+0f, 0.\+0f, 0.\+0f \}
+\begin{DoxyCompactList}\small\item\em The random posistion generated. \end{DoxyCompactList}\item 
+F\+Reached\+Desination \mbox{\hyperlink{class_a_a_i_movement_controller_a772b2c6ed7e2319b8e5c76e5cc57db37}{On\+Reached\+Desination}}
+\begin{DoxyCompactList}\small\item\em An event that is broadcast when Character has reached the target\+Pos. On this event Wander is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_a_i_movement_controller_ad90518f56a504b1b99d79ad251b5e801}\label{class_a_a_i_movement_controller_ad90518f56a504b1b99d79ad251b5e801}} 
+\index{AAIMovementController@{AAIMovementController}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily void A\+A\+I\+Movement\+Controller\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the game starts or when spawned. 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_af805e434d3f3176561935a9ffc0f9ce0}\label{class_a_a_i_movement_controller_af805e434d3f3176561935a9ffc0f9ce0}} 
+\index{AAIMovementController@{AAIMovementController}!CalculateRandomVector@{CalculateRandomVector}}
+\index{CalculateRandomVector@{CalculateRandomVector}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{CalculateRandomVector()}{CalculateRandomVector()}}
+{\footnotesize\ttfamily F\+Vector A\+A\+I\+Movement\+Controller\+::\+Calculate\+Random\+Vector (\begin{DoxyParamCaption}\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Calculte new random location. 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_aa588ed421afbbcd4fe6548a88ce65cff}\label{class_a_a_i_movement_controller_aa588ed421afbbcd4fe6548a88ce65cff}} 
+\index{AAIMovementController@{AAIMovementController}!CheckTargetInRange@{CheckTargetInRange}}
+\index{CheckTargetInRange@{CheckTargetInRange}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{CheckTargetInRange()}{CheckTargetInRange()}}
+{\footnotesize\ttfamily bool A\+A\+I\+Movement\+Controller\+::\+Check\+Target\+In\+Range (\begin{DoxyParamCaption}\item[{float}]{range }\end{DoxyParamCaption})}
+
+
+
+Checks to see if target position in within a given range. 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a2b6148d8d4d2ee4ff1067423586f12f1}\label{class_a_a_i_movement_controller_a2b6148d8d4d2ee4ff1067423586f12f1}} 
+\index{AAIMovementController@{AAIMovementController}!Wander@{Wander}}
+\index{Wander@{Wander}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{Wander()}{Wander()}}
+{\footnotesize\ttfamily void A\+A\+I\+Movement\+Controller\+::\+Wander (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Moves to a random location. 
+
+Start with a random target on the edge of a circle with a set radius around the agent
+
+Add a randomized vector to the target, with a magnitude specified by a jitter amount
+
+Bring the target back to the radius of the sphere by normalizing it and scaling by the radius
+
+Add the previous target
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a10b9187a9ec6e53250c09ec6a3320d43}\label{class_a_a_i_movement_controller_a10b9187a9ec6e53250c09ec6a3320d43}} 
+\index{AAIMovementController@{AAIMovementController}!m\_jitter@{m\_jitter}}
+\index{m\_jitter@{m\_jitter}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{m\_jitter}{m\_jitter}}
+{\footnotesize\ttfamily float A\+A\+I\+Movement\+Controller\+::m\+\_\+jitter = 1.\+0f}
+
+
+
+set jitter 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a25a7e8f1b738c43ff80d588e2a31a292}\label{class_a_a_i_movement_controller_a25a7e8f1b738c43ff80d588e2a31a292}} 
+\index{AAIMovementController@{AAIMovementController}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily float A\+A\+I\+Movement\+Controller\+::m\+\_\+offset = 1.\+0f}
+
+
+
+set offset 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a3f9844e64809f1ff023fc2cc987cc104}\label{class_a_a_i_movement_controller_a3f9844e64809f1ff023fc2cc987cc104}} 
+\index{AAIMovementController@{AAIMovementController}!m\_prevTarget@{m\_prevTarget}}
+\index{m\_prevTarget@{m\_prevTarget}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{m\_prevTarget}{m\_prevTarget}}
+{\footnotesize\ttfamily F\+Vector A\+A\+I\+Movement\+Controller\+::m\+\_\+prev\+Target = \{ 0.\+0f, 0.\+0f, 0.\+0f \}}
+
+
+
+set previous target to be 0 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a98c269b05cd8c525c28687f7c6434919}\label{class_a_a_i_movement_controller_a98c269b05cd8c525c28687f7c6434919}} 
+\index{AAIMovementController@{AAIMovementController}!m\_radius@{m\_radius}}
+\index{m\_radius@{m\_radius}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
+{\footnotesize\ttfamily float A\+A\+I\+Movement\+Controller\+::m\+\_\+radius = 600.\+0f}
+
+
+
+set radius ~\newline
+ 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a772b2c6ed7e2319b8e5c76e5cc57db37}\label{class_a_a_i_movement_controller_a772b2c6ed7e2319b8e5c76e5cc57db37}} 
+\index{AAIMovementController@{AAIMovementController}!OnReachedDesination@{OnReachedDesination}}
+\index{OnReachedDesination@{OnReachedDesination}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{OnReachedDesination}{OnReachedDesination}}
+{\footnotesize\ttfamily F\+Reached\+Desination A\+A\+I\+Movement\+Controller\+::\+On\+Reached\+Desination}
+
+
+
+An event that is broadcast when Character has reached the target\+Pos. On this event Wander is called. 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_a5a72dc4114e71dc509b2e0b434f4bd54}\label{class_a_a_i_movement_controller_a5a72dc4114e71dc509b2e0b434f4bd54}} 
+\index{AAIMovementController@{AAIMovementController}!Owner@{Owner}}
+\index{Owner@{Owner}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{Owner}{Owner}}
+{\footnotesize\ttfamily A\+Actor$\ast$ A\+A\+I\+Movement\+Controller\+::\+Owner}
+
+
+
+The owner of this controller. 
+
+\mbox{\Hypertarget{class_a_a_i_movement_controller_aeddd9adae249a1ea5b6914ceb41fd8b4}\label{class_a_a_i_movement_controller_aeddd9adae249a1ea5b6914ceb41fd8b4}} 
+\index{AAIMovementController@{AAIMovementController}!targetPos@{targetPos}}
+\index{targetPos@{targetPos}!AAIMovementController@{AAIMovementController}}
+\doxysubsubsection{\texorpdfstring{targetPos}{targetPos}}
+{\footnotesize\ttfamily F\+Vector A\+A\+I\+Movement\+Controller\+::target\+Pos = \{ 0.\+0f, 0.\+0f, 0.\+0f \}}
+
+
+
+The random posistion generated. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_a_i_movement_controller_8h}{A\+I\+Movement\+Controller.\+h}}\item 
+\mbox{\hyperlink{_a_i_movement_controller_8cpp}{A\+I\+Movement\+Controller.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,166 @@
+\hypertarget{class_a_carnivore_character}{}\doxysection{A\+Carnivore\+Character Class Reference}
+\label{class_a_carnivore_character}\index{ACarnivoreCharacter@{ACarnivoreCharacter}}
+
+
+{\ttfamily \#include $<$Carnivore\+Character.\+h$>$}
+
+Inheritance diagram for A\+Carnivore\+Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_a_carnivore_character}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_carnivore_character_a318f822a79d8699a089155a24df0fdab}{On\+Overlap\+Begin}} (class U\+Primitive\+Component $\ast$Overlapped\+Comp, class A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index, bool b\+From\+Sweep, const F\+Hit\+Result \&Sweep\+Result)
+\begin{DoxyCompactList}\small\item\em declare overlap begin function \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_carnivore_character_ab237d5e3d7eb85552d555605af186f49}{On\+Overlap\+End}} (class U\+Primitive\+Component $\ast$Overlapped\+Comp, class A\+Actor $\ast$Other\+Actor, class U\+Primitive\+Component $\ast$Other\+Comp, int32 Other\+Body\+Index)
+\begin{DoxyCompactList}\small\item\em declare overlap end function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_carnivore_character_a9dbd12e815862a50f032050fc8b842a4}{A\+Carnivore\+Character}} ()
+\item 
+virtual void \mbox{\hyperlink{class_a_carnivore_character_a3b27983dc2848832e784ec67d2d2f456}{Tick}} (float Delta\+Time) override
+\item 
+virtual void \mbox{\hyperlink{class_a_carnivore_character_af9f848173a971bc621dd00ba2109e3ff}{Setup\+Player\+Input\+Component}} (class U\+Input\+Component $\ast$Player\+Input\+Component) override
+\item 
+bool \mbox{\hyperlink{class_a_carnivore_character_a71fdc922b7c632edf552af8a35c7f623}{Check\+If\+Hungry}} ()
+\begin{DoxyCompactList}\small\item\em Checks to t see if current hunger is belong the the threshold of hungry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_a_carnivore_character_ae3a1b30b4564f27a169a0e92f9595e13}{Check\+If\+Objectf\+Is\+In\+Range}} (float range, F\+Vector food\+Pos)
+\begin{DoxyCompactList}\small\item\em returns true if food is in range \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_a_carnivore_character_a20e4e6d80112e031b77ed7cd76f1885b}{current\+Hunger}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em Decreases over time and refils after eating. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_carnivore_character_aae9a384876cc345e6ce8a4322cd84f80}{max\+Hunger}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em The max hunger can be at any given time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_carnivore_character_ae300b1b9c28714c9a9d39f2878dc7f45}{hungry}} = 75.\+0f
+\begin{DoxyCompactList}\small\item\em How low the hunger must be until food can be consumed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_a_i_movement_controller}{A\+A\+I\+Movement\+Controller}} $\ast$ \mbox{\hyperlink{class_a_carnivore_character_afc02c279beddc6604fcfaab6a94efb8b}{Controller}}
+\begin{DoxyCompactList}\small\item\em The AI Controller using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_carnivore_character_a812e3e1f596b8909e68328febd9999f8}{Begin\+Play}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_carnivore_character_a9dbd12e815862a50f032050fc8b842a4}\label{class_a_carnivore_character_a9dbd12e815862a50f032050fc8b842a4}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{ACarnivoreCharacter()}{ACarnivoreCharacter()}}
+{\footnotesize\ttfamily A\+Carnivore\+Character\+::\+A\+Carnivore\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+declare trigger capsule
+
+declare overlap events
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_carnivore_character_a812e3e1f596b8909e68328febd9999f8}\label{class_a_carnivore_character_a812e3e1f596b8909e68328febd9999f8}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily void A\+Carnivore\+Character\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_a_carnivore_character_a71fdc922b7c632edf552af8a35c7f623}\label{class_a_carnivore_character_a71fdc922b7c632edf552af8a35c7f623}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!CheckIfHungry@{CheckIfHungry}}
+\index{CheckIfHungry@{CheckIfHungry}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{CheckIfHungry()}{CheckIfHungry()}}
+{\footnotesize\ttfamily bool A\+Carnivore\+Character\+::\+Check\+If\+Hungry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks to t see if current hunger is belong the the threshold of hungry. 
+
+\mbox{\Hypertarget{class_a_carnivore_character_ae3a1b30b4564f27a169a0e92f9595e13}\label{class_a_carnivore_character_ae3a1b30b4564f27a169a0e92f9595e13}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!CheckIfObjectfIsInRange@{CheckIfObjectfIsInRange}}
+\index{CheckIfObjectfIsInRange@{CheckIfObjectfIsInRange}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{CheckIfObjectfIsInRange()}{CheckIfObjectfIsInRange()}}
+{\footnotesize\ttfamily bool A\+Carnivore\+Character\+::\+Check\+If\+Objectf\+Is\+In\+Range (\begin{DoxyParamCaption}\item[{float}]{range,  }\item[{F\+Vector}]{food\+Pos }\end{DoxyParamCaption})}
+
+
+
+returns true if food is in range 
+
+\mbox{\Hypertarget{class_a_carnivore_character_a318f822a79d8699a089155a24df0fdab}\label{class_a_carnivore_character_a318f822a79d8699a089155a24df0fdab}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!OnOverlapBegin@{OnOverlapBegin}}
+\index{OnOverlapBegin@{OnOverlapBegin}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{OnOverlapBegin()}{OnOverlapBegin()}}
+{\footnotesize\ttfamily void A\+Carnivore\+Character\+::\+On\+Overlap\+Begin (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{Overlapped\+Comp,  }\item[{class A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index,  }\item[{bool}]{b\+From\+Sweep,  }\item[{const F\+Hit\+Result \&}]{Sweep\+Result }\end{DoxyParamCaption})}
+
+
+
+declare overlap begin function 
+
+Determinds how the character behaves when overlapping with another hitbox. \mbox{\Hypertarget{class_a_carnivore_character_ab237d5e3d7eb85552d555605af186f49}\label{class_a_carnivore_character_ab237d5e3d7eb85552d555605af186f49}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!OnOverlapEnd@{OnOverlapEnd}}
+\index{OnOverlapEnd@{OnOverlapEnd}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{OnOverlapEnd()}{OnOverlapEnd()}}
+{\footnotesize\ttfamily void A\+Carnivore\+Character\+::\+On\+Overlap\+End (\begin{DoxyParamCaption}\item[{class U\+Primitive\+Component $\ast$}]{Overlapped\+Comp,  }\item[{class A\+Actor $\ast$}]{Other\+Actor,  }\item[{class U\+Primitive\+Component $\ast$}]{Other\+Comp,  }\item[{int32}]{Other\+Body\+Index }\end{DoxyParamCaption})}
+
+
+
+declare overlap end function 
+
+Determinds how the character behaves when no longer overlapping with another hitbox. \mbox{\Hypertarget{class_a_carnivore_character_af9f848173a971bc621dd00ba2109e3ff}\label{class_a_carnivore_character_af9f848173a971bc621dd00ba2109e3ff}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!SetupPlayerInputComponent@{SetupPlayerInputComponent}}
+\index{SetupPlayerInputComponent@{SetupPlayerInputComponent}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{SetupPlayerInputComponent()}{SetupPlayerInputComponent()}}
+{\footnotesize\ttfamily void A\+Carnivore\+Character\+::\+Setup\+Player\+Input\+Component (\begin{DoxyParamCaption}\item[{class U\+Input\+Component $\ast$}]{Player\+Input\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_a_carnivore_character_a3b27983dc2848832e784ec67d2d2f456}\label{class_a_carnivore_character_a3b27983dc2848832e784ec67d2d2f456}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!Tick@{Tick}}
+\index{Tick@{Tick}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void A\+Carnivore\+Character\+::\+Tick (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Slowly decrease current hunger
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_carnivore_character_afc02c279beddc6604fcfaab6a94efb8b}\label{class_a_carnivore_character_afc02c279beddc6604fcfaab6a94efb8b}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!Controller@{Controller}}
+\index{Controller@{Controller}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{Controller}{Controller}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_a_i_movement_controller}{A\+A\+I\+Movement\+Controller}}$\ast$ A\+Carnivore\+Character\+::\+Controller}
+
+
+
+The AI Controller using this. 
+
+\mbox{\Hypertarget{class_a_carnivore_character_a20e4e6d80112e031b77ed7cd76f1885b}\label{class_a_carnivore_character_a20e4e6d80112e031b77ed7cd76f1885b}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!currentHunger@{currentHunger}}
+\index{currentHunger@{currentHunger}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{currentHunger}{currentHunger}}
+{\footnotesize\ttfamily float A\+Carnivore\+Character\+::current\+Hunger = 100.\+0f}
+
+
+
+Decreases over time and refils after eating. 
+
+\mbox{\Hypertarget{class_a_carnivore_character_ae300b1b9c28714c9a9d39f2878dc7f45}\label{class_a_carnivore_character_ae300b1b9c28714c9a9d39f2878dc7f45}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!hungry@{hungry}}
+\index{hungry@{hungry}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{hungry}{hungry}}
+{\footnotesize\ttfamily float A\+Carnivore\+Character\+::hungry = 75.\+0f}
+
+
+
+How low the hunger must be until food can be consumed. 
+
+\mbox{\Hypertarget{class_a_carnivore_character_aae9a384876cc345e6ce8a4322cd84f80}\label{class_a_carnivore_character_aae9a384876cc345e6ce8a4322cd84f80}} 
+\index{ACarnivoreCharacter@{ACarnivoreCharacter}!maxHunger@{maxHunger}}
+\index{maxHunger@{maxHunger}!ACarnivoreCharacter@{ACarnivoreCharacter}}
+\doxysubsubsection{\texorpdfstring{maxHunger}{maxHunger}}
+{\footnotesize\ttfamily float A\+Carnivore\+Character\+::max\+Hunger = 100.\+0f}
+
+
+
+The max hunger can be at any given time. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_carnivore_character_8h}{Carnivore\+Character.\+h}}\item 
+\mbox{\hyperlink{_carnivore_character_8cpp}{Carnivore\+Character.\+cpp}}\end{DoxyCompactItemize}
